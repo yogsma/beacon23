@@ -11,11 +11,11 @@ In-Memory database (NOTE - this is only for demo purpose and not for production 
 REST API can retrieve the required data from this in-memory database.
 
 ### **Table of Content**
-- Getting Started
-- Testing
-- Deployment
-- License
-- Acknowledgements
+- [Getting Started](#Getting-Started)
+- [Testing](#Testing)
+- [Deployment](#Deployment)
+- [License](#License)
+- [Acknowledgements](#Acknowledgements)
 
 # Getting Started
 You can set up this project by importing the source in your favorite IDE. I have also provided a 
