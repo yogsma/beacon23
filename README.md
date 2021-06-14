@@ -1,6 +1,8 @@
 # Beacon23
 Beacon23 - A Vulnerability Finder
 
+[![Build Status](https://travis-ci.com/yogsma/beacon23.svg?branch=main)](https://travis-ci.com/yogsma/beacon23)
+
 A Simple REST API to process National Vulnerability Database - cve modified data feed and 
 display that data. A client application can call these APIs to display the data with nice 
 visualization. 
