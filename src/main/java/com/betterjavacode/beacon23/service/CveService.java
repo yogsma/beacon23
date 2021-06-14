@@ -4,18 +4,21 @@ import com.betterjavacode.beacon23.domain.*;
 import com.betterjavacode.beacon23.domain.projections.CveDTO;
 import com.betterjavacode.beacon23.persistence.CveDataDao;
 import com.betterjavacode.beacon23.utils.DateUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Component
 public class CveService
 {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(CveService.class);
     public static final String EMPTY_STRING = "";
 
     @Autowired
@@ -23,6 +26,7 @@ public class CveService
 
     public List<CveDTO> getCveItems(String from, String to)
     {
+        LOGGER.debug("The date range values are from = {} and to = {}", from, to);
         List<CveData> cveDataList = cveDataDao.findAll();
         List<CveDTO> cveDTOList = new ArrayList<>();
 
@@ -84,8 +88,17 @@ public class CveService
         {
             List<CveItem> cveItems = cveData.getCveItems();
 
-            CveItem cveItem =
-                    cveItems.stream().filter(ci -> ci.getCve().getCveMetadata().getCveId().equals(cveId)).findAny().get();
+            Optional<CveItem> optionalCveItem =
+                    cveItems.stream().filter(ci -> ci.getCve().getCveMetadata().getCveId().equals(cveId)).findAny();
+            CveItem cveItem = null;
+            if(optionalCveItem.isPresent())
+            {
+                cveItem = optionalCveItem.get();
+            }
+            else
+            {
+                return cveDTO;
+            }
             cveDTO = convertCveItemToCveDTO(cveItem);
         }
 

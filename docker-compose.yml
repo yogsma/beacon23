@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:h2:mem:cvedatadb
+    networks:
+      - common-network
+
+networks:
+  common-network:
+    driver: bridge

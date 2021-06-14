@@ -10,7 +10,7 @@ import java.util.Date;
 
 public class DateUtil
 {
-    public static DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm'Z'");
+    public static DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
     private static final Logger LOGGER = LoggerFactory.getLogger(DateUtil.class);
 
     public static Date formatDate (String publishedDate)
