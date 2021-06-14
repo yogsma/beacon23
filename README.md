@@ -32,7 +32,7 @@ docker-compose file and that can be quick way to deploy this project.
 Install Docker and Docker Compose 
 
 # Testing
-- If you run the application through docker, it can be accessed at [address]
+- If you run the application through docker, it can be accessed at http://localhost:8080
 
 - You can also run the application by downloading this repository and building it on your local 
   environment provided you have gradle.
@@ -42,10 +42,8 @@ Install Docker and Docker Compose
    - You can access the APIs 
      - List of Vulnerabilities - http://localhost:8080/v1/beacon23/vulnerabilities/list 
      - List of Vulnerabilities published in a date range - 
-       http://localhost:8080/v1/beacon23/vulnerabilities/list?
-       fromDate=2021-06-01&toDate=2021-06-09
-     - Vulnerability by CVE Id - http://localhost:8080/v1/beacon23/vulnerabilities?
-       cveId=CVE-2021-33742  
+       http://localhost:8080/v1/beacon23/vulnerabilities/list?fromDate=2021-06-01&toDate=2021-06-09
+     - Vulnerability by CVE Id - http://localhost:8080/v1/beacon23/vulnerabilities?cveId=CVE-2021-33742  
     
 # Deployment
 You can deploy this application using docker-compose easily. 
@@ -61,3 +59,8 @@ This project is licensed under the MIT-License - see the [LICENSE](./LICENSE) fi
 
 # Acknowledgements
 - [National Vulnerability Database](https://nvd.nist.gov/vuln/data-feeds)
+
+# Why Beacon23?
+Beacon23 is a famous novel by author Huge Howey. In 23rd century, when the humans are 
+inter-planetary species, beacons are lighthouses in space saving humans from foreign forces. 
+This is a small attempt in the big world of internet - Beacon23.

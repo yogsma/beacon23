@@ -5,6 +5,8 @@ dist: trusty
 notifications:
   email: false
 
+language: java
+
 services: docker
 
 before_script:
