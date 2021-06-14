@@ -7,13 +7,16 @@ notifications:
 
 language: java
 
+env:
+  - DOCKER_COMPOSE_VERSION=1.29.1
+
 services: docker
 
 before_install:
   - chmod +x gradlew
 
 before_script:
-  - docker-compose build
+  - sudo docker-compose build
 
 script:
-  - docker-compose up -d
+  - sudo docker-compose up -d
