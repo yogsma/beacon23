@@ -1,0 +1,14 @@
+sudo: required
+
+dist: trusty
+
+notifications:
+  email: false
+
+services: docker
+
+before_script:
+  - docker-compose build
+
+script:
+  - docker-compose up -d
